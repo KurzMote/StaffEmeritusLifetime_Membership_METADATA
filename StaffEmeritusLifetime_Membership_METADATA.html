@@ -62,24 +62,14 @@
                                                                                 {{/ifEqual}}
                                                                             {{/if}}
                                                                         </center>    
+                                                                        
 
-{{!--Header "Greeting"--}}                                              <h1 style="margin-top: 10px 0!important; margin-bottom:10px; color: #141414; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 24px; font-weight: bold; line-height: 25px; padding: 0; text-align: left; word-wrap: normal;">  
-                                                                            {{#if event_templates.[1]}}
-                                                                                Thank You For Your Orders
-                                                                            {{else}}
-                                                                                {{#if event_templates.[0].event_template_meta.override_header}}
-                                                                                    {{event_templates.[0].event_template_meta.override_header}}
-                                                                                {{else}}
-                                                                                    Thank you for your 
-                                                                                    {{#if event_templates.[0].event_template_meta.custom_event_name}}
-                                                                                        {{event_templates.[0].event_template_meta.custom_event_name}}
-                                                                                    {{else}}
-                                                                                        {{event_templates.[0].event_template_name}}
-                                                                                    {{/if}}
-                                                                                    order
-                                                                                {{/if}}
-                                                                            {{/if}}
-                                                                        </h1>
+
+
+
+
+
+
 
                                                                         {{#if event_templates.[1]}}
                                                                             <p style="clear: both; margin: 0; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
