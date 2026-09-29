@@ -43,7 +43,7 @@
                                                             <tbody>
                                                                 <tr style="padding: 0; text-align: left; vertical-align: top;">
                                                                     <th style="margin: 0; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
-{{!--Large Logo at Top of Page--}}                                      <center class="logo-wrapper" style="margin: 40px 0; min-width: 0!important; width: 100%;" data-parsed="">
+{{!--Large Logo at Top of Page--}}                                      <center class="logo-wrapper" style="margin: 40px 0px 0px 0px; min-width: 0!important; width: 100%;" data-parsed="">
     {{!--Custom top logo--}}                                                {{#if event_templates.[0].event_template_meta.override_top_logo}}
                                                                                 <img class="logo float-center" style="-ms-interpolation-mode: bicubic; margin: 0 auto; clear: both; display: block; float: none; max-width: 100%; outline: 0; text-align: center; text-decoration: none; width: 300px;"
                                                                                     src="https://{{portal.domain}}/cached_api/assets/mote/{{event_templates.[0].event_template_meta.override_top_logo}}" alt="Mote's Logo" align="center">
@@ -61,11 +61,18 @@
                                                                                     {{/ifEqual}}	
                                                                                 {{/ifEqual}}
                                                                             {{/if}}
-                                                                        </center>  
-
-///BEGIN
-                                                                    <h2 style="margin: 0; margin-bottom: 10px; color: #000000; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 24px; font-weight: bold; line-height: 32px; margin-top: 32px; padding: 0; text-align: left; word-wrap: normal;">
-                                                                        Here is your&nbsp;Staff Membership Card!</h2>
+                                                                        </center>
+                                                                            <h2 style="margin: 0; margin-bottom: 10px; color: #000000; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 20px; font-weight: bold; line-height: 24px; margin-top: 28px; padding: 0; text-align: left; word-wrap: normal;">
+                                                                                <center>
+                                                                                Here is your
+                                                                                {{#ifEqual event_templates.[0].event_sessions.[0].tickets.[0].ticket_group_name "Lifetime Membership"}}
+                                                                                    Lifetime
+                                                                                {{else}}
+                                                                                    {{event_templates.[0].event_sessions.[0].tickets.[0].ticket_group_name}}
+                                                                                {{/ifEqual}}
+                                                                                Membership card!
+                                                                                </center>
+                                                                            </h2>
                                                                     {{#with event_templates.[0].event_sessions.[0]}}
                                                                     <table class="membership-card"
                                                                         style="margin: 0 auto; background: #fefefe; border-collapse: separate; border-spacing: 0; margin-top: 20px; padding: 0; text-align: inherit; vertical-align: top; width: 100%!important; max-width: 445px; border-radius: 15px 15px 15px 15px; border: 1px solid #cccccc;">
