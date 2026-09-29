@@ -196,154 +196,130 @@
                                                                             {{/ifEqual}}
                                                                         {{/ifEqual}}
                                                                     {{/ifEqual}}
-
-
-
-
                                                                     
-///START HERE
-                                                                    
-                                                                    <h2
-                                                                        style="margin: 0; margin-bottom: 10px; color: #000000; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 24px; font-weight: bold; line-height: 32px; margin-top: 32px; padding: 0; text-align: left; word-wrap: normal;">
-                                                                        &nbsp;Questions?</h2>
-                                                                    <p
-                                                                        style="margin: 0; margin-bottom: 10px; color: #141414; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
-                                                                        For membership questions or more information,
-                                                                        please call&nbsp;<a
-                                                                            style="margin: 0; color: #0160a9; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-weight: 400; line-height: 24px; padding: 0; text-align: left; text-decoration: underline;"
-                                                                            href="tel:941-388-4441">(941) 388-4441</a>,
-                                                                        ext. 373.&nbsp;
-                                                                    </p>
-                                                                
-                                    {{#each event_templates}} 
-                                        {{#each event_sessions}} 
-                                            {{#each tickets_summary}}
-                                                {{#ifEqual "Primary" ticket_type_name}}
-                                                {{/ifEqual}} 
-                                            {{/each}} 
-                                        {{/each}} 
-                                    {{/each}}
-                                    {{#if discounts}}{{#each discounts}}{{/each}} {{/if}} {{#if
-                                    payments.[0].amount}}{{/if}}
-                                    <table class="row order-summary"
-                                        style="border-collapse: collapse; border-spacing: 0; display: table; padding: 0; position: relative; text-align: left; vertical-align: top; width: 100%;">
-                                        <tbody>
-                                            <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                <th class="small-12 large-6 columns first"
-                                                    style="margin: 0 auto; color: #333333; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; padding-bottom: 16px; padding-left: 16px; padding-right: 8px; text-align: left; width: 274px;">
-                                                    <table
-                                                        style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
-                                                        <tbody>
-                                                            <tr
-                                                                style="padding: 0; text-align: left; vertical-align: top;">
-                                                                <th
-                                                                    style="margin: 0; color: #333333; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
-                                                                    <p
-                                                                        style="margin: 0; margin-bottom: 10px; color: #333333; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
-										                                <strong>Order #:</strong> {{ticket_order_number}}</p>
+    {{!--Your Membership details section--}}                    <h2 style="margin: 0; margin-bottom: 10px; color: #000000; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 24px; font-weight: bold; line-height: 32px; margin-top: 32px; padding: 0; text-align: left; word-wrap: normal;">
+                                                                    Your Membership    
+                                                                </h2>
                                                                     {{#each event_templates}} {{#each event_sessions}}
-                                                                    {{#with tickets.[0]}}
-                                                                    <p
-                                                                        style="margin: 0; margin-bottom: 10px; color: #333333; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
-											                            <strong>Membership ID:</strong> {{../../../membership.scan_code}}</p>
-                                                                    <p
-                                                                        style="margin: 0; margin-bottom: 10px; color: #333333; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
-											                            <strong>Expires:</strong> {{formatDateTime valid_to_raw "January 2, 2006"}}</p>
-                                                                    {{/with}} {{/each}} {{/each}}
-                                                                    <p
-                                                                        style="margin: 0; margin-bottom: 10px; color: #333333; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
-										                                <strong>Purchase Date:</strong> {{formatDateTime payments.[0].occurred_on_raw "January 2, 2006"}}
-                                                                    </p>
-                                                                </th>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </th>
-                                                <th class="small-12 large-6 columns last"
-                                                    style="margin: 0 auto; color: #333333; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; padding-bottom: 16px; padding-left: 8px; padding-right: 16px; text-align: left; width: 274px;">
-                                                    <table
-                                                        style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
-                                                        <tbody>
-                                                            <tr
-                                                                style="padding: 0; text-align: left; vertical-align: top;">
-                                                                <th
-                                                                    style="margin: 0; color: #333333; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
-                                                                    <p
-                                                                        style="margin: 0; margin-bottom: 10px; color: #333333; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
-                                                                        <strong>Your Details:</strong> 
-                                                                        <br />{{identity_name}} {{#if identity_meta.address}}
-                                                                        <br />{{identity_meta.address}}
-                                                                        <br />{{identity_meta.city}},
-                                                                        {{identity_meta.state}}
-                                                                        {{identity_meta.zip_code}} {{else}}
-                                                                        {{identity_email}} <br />{{identity_meta.phone}}
-                                                                        {{/if}}
-                                                                    </p>
-                                                                </th>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </th>
-                                            </tr>
-                                        </tbody>
-                                        <tbody>
-                                            <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                <th class="small-6 large-6 columns first" style="margin: 0 auto; color: #007cba; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 24px; padding: 32px 8px 0 16px; text-align: left; width: 274px;">
-                                                    &nbsp;
-                                                </th>
-                                                <th class="text-right small-3 large-3 columns last" style="margin: 0 auto; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 32px 16px 32px 8px; text-align: right; width: 129px;">
-                                                    &nbsp;
-                                                </th>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                                                        {{#with tickets.[0]}}
+                                                                            <div><b>Membership Level:</b> {{ticket_group_name}}</div>
+                                                                            <div><b>Membership ID:</b> {{../../../membership.scan_code}}</div>
+                                                                            <div><b>Expires:</b> {{formatDateTime valid_to_raw "January 2, 2006"}}</div>
+                                                                        {{/with}} 
+                                                                    {{/each}} {{/each}} 
+                                                                    {{#each event_templates}} {{#each event_sessions}} {{#each tickets}} 
+                                                                        {{#ifEqual "codes" handler}}
+                                                                            <div><b>{{ticket_type_name}}:</b> {{scan_code}}</div>
+                                                                        {{/ifEqual}}
+                                                                    {{/each}}{{/each}}{{/each}}&nbsp;
 
-
-///END HERE
-                                                                       
-                                        
-  
-
-
-                                                                        {{#if event_templates.[1]}}
-                                                                        {{else}}
-{{!--Questions--}}                                                          <h2 style="margin: 0; margin-top:10px; margin-bottom: 0px; color: #000000; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 24px; font-weight: bold; line-height: 24px; padding: 0; text-align: left; word-wrap: normal;">
-                                                                                Questions
-                                                                            </h2>
-    {{!--Contact info has defaults if no metadata is provided--}}               <p style="margin-top:2px;">
-                                                                                    Please contact 
-                                                                                    {{#if event_templates.[0].event_template_meta.[event_contact_person]}}
-                                                                                        {{event_templates.[0].event_template_meta.[event_contact_person]}}
-                                                                                    {{else}}
-                                                                                        us
-                                                                                    {{/if}}
-                                                                                    at 
-                                                                                    {{#if event_templates.[0].event_template_meta.[event_contact_phone]}}
-                                                                                        <a style="margin-top:0px; margin-bottom: 5px;" href="tel:{{event_templates.[0].event_template_meta.[event_contact_phone_IDF]}}">{{event_templates.[0].event_template_meta.[event_contact_phone]}}</a>
-                                                                                    {{else}}
-                                                                                        <a style="margin-top:0px; margin-bottom: 5px;" href="tel:+19413886683">(941) 388-6683</a>
-                                                                                    {{/if}}
-                                                                                    or email 
-                                                                                    {{#if event_templates.[0].event_template_meta.[event_contact_email]}}
-                                                                                        <a style="margin-top:0px; margin-bottom: 5px;" href="mailto:{{event_templates.[0].event_template_meta.[event_contact_email]}}?subject={{event_templates.[0].event_sessions.[0].tickets.[0].ticket_holder_name}}%20question:%20{{event_templates.[0].event_template_name}}&body=Hello%20{{event_templates.[0].event_template_meta.[event_contact_person]}},%0D%0A%0D%0A%20My%20order%20number%20is:%20{{ticket_order_number}}%0D%0A%0D%0A">
-                                                                                            {{event_templates.[0].event_template_meta.[event_contact_email]}}
-                                                                                        </a>
-                                                                                    {{else}}
-                                                                                        <a style="margin-top:0px; margin-bottom: 5px;" href="mailto:guestservices@mote.org?subject={{event_templates.[0].event_sessions.[0].tickets.[0].ticket_holder_name}}%20question:%20{{event_templates.[0].event_template_name}}&body=Hello%20{{event_templates.[0].event_template_meta.[event_contact_person]}},%0D%0A%0D%0A%20My%20order%20number%20is:%20{{ticket_order_number}}%0D%0A%0D%0A">guestservices@mote.org</a>
-                                                                                    {{/if}}
-                                                                                </p>
-                                                                        {{/if}}
-
+{{!--Questions--}}                                                  <h2 style="margin: 0; margin-top:10px; margin-bottom: 0px; color: #000000; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 24px; font-weight: bold; line-height: 24px; padding: 0; text-align: left; word-wrap: normal;">
+                                                                        Questions
+                                                                    </h2>
+    {{!--Contact info has defaults if no metadata is provided--}}       <p style="margin-top:2px;">
+                                                                            For membership questions or more information, please call
+                                                                            {{#if event_templates.[0].event_template_meta.[event_contact_person]}}
+                                                                                {{event_templates.[0].event_template_meta.[event_contact_person]}}
+                                                                            {{else}}
+                                                                                the Membership Team
+                                                                            {{/if}}
+                                                                            at 
+                                                                            {{#if event_templates.[0].event_template_meta.[event_contact_phone]}}
+                                                                                <a style="margin-top:0px; margin-bottom: 5px;" href="tel:{{event_templates.[0].event_template_meta.[event_contact_phone_IDF]}}">{{event_templates.[0].event_template_meta.[event_contact_phone]}}</a>
+                                                                            {{else}}
+                                                                                <a style="margin-top:0px; margin-bottom: 5px;" href="tel:+19413886683">(941) 388-6683</a>
+                                                                            {{/if}}
+                                                                            or email 
+                                                                            {{#if event_templates.[0].event_template_meta.[event_contact_email]}}
+                                                                                <a style="margin-top:0px; margin-bottom: 5px;" href="mailto:{{event_templates.[0].event_template_meta.[event_contact_email]}}?subject={{event_templates.[0].event_sessions.[0].tickets.[0].ticket_holder_name}}%20question:%20{{event_templates.[0].event_template_name}}&body=Hello%20{{event_templates.[0].event_template_meta.[event_contact_person]}},%0D%0A%0D%0A%20My%20order%20number%20is:%20{{ticket_order_number}}%0D%0A%0D%0A">
+                                                                                    {{event_templates.[0].event_template_meta.[event_contact_email]}}
+                                                                                </a>
+                                                                            {{else}}
+                                                                                <a style="margin-top:0px; margin-bottom: 5px;" href="mailto:guestservices@mote.org?subject={{event_templates.[0].event_sessions.[0].tickets.[0].ticket_holder_name}}%20question:%20{{event_templates.[0].event_template_name}}&body=Hello%20{{event_templates.[0].event_template_meta.[event_contact_person]}},%0D%0A%0D%0A%20My%20order%20number%20is:%20{{ticket_order_number}}%0D%0A%0D%0A">guestservices@mote.org</a>
+                                                                            {{/if}}
+                                                                        </p>
                                                                         {{#each event_templates}}
                                                                             {{#if event_template_meta.questions_extra_p}}
                                                                                 <p>{{event_template_meta.questions_extra_p}}</p>
                                                                             {{else}}
                                                                             {{/if}}
                                                                         {{/each}}
+                            
+                                                                        {{#each event_templates}} 
+                                                                            {{#each event_sessions}} 
+                                                                                {{#each tickets_summary}}
+                                                                                    {{#ifEqual "Primary" ticket_type_name}}
+                                                                                    {{/ifEqual}} 
+                                                                                {{/each}} 
+                                                                            {{/each}} 
+                                                                        {{/each}}
+                                                                        {{#if discounts}}{{#each discounts}}{{/each}}{{/if}} {{#if payments.[0].amount}}{{/if}}
+                                                                        <table class="row order-summary"
+                                                                            style="border-collapse: collapse; border-spacing: 0; display: table; padding: 0; position: relative; text-align: left; vertical-align: top; width: 100%;">
+                                                                            <tbody>
+                                                                                <tr style="padding: 0; text-align: left; vertical-align: top;">
+                                                                                    <th class="small-12 large-6 columns first"
+                                                                                        style="margin: 0 auto; color: #333333; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; padding-bottom: 16px; padding-left: 16px; padding-right: 8px; text-align: left; width: 274px;">
+                                                                                        <table
+                                                                                            style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
+                                                                                            <tbody>
+                                                                                                <tr
+                                                                                                    style="padding: 0; text-align: left; vertical-align: top;">
+                                                                                                    <th
+                                                                                                        style="margin: 0; color: #333333; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
+                                                                                                        <p
+                                                                                                            style="margin: 0; margin-bottom: 10px; color: #333333; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
+                                                                                                            <strong>Order #:</strong> {{ticket_order_number}}</p>
+                                                                                                        {{#each event_templates}} {{#each event_sessions}}
+                                                                                                        {{#with tickets.[0]}}
+                                                                                                        <p
+                                                                                                            style="margin: 0; margin-bottom: 10px; color: #333333; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
+                                                                                                            <strong>Membership ID:</strong> {{../../../membership.scan_code}}</p>
+                                                                                                        <p
+                                                                                                            style="margin: 0; margin-bottom: 10px; color: #333333; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
+                                                                                                            <strong>Expires:</strong> {{formatDateTime valid_to_raw "January 2, 2006"}}</p>
+                                                                                                        {{/with}} {{/each}} {{/each}}
+                                                                                                        <p
+                                                                                                            style="margin: 0; margin-bottom: 10px; color: #333333; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
+                                                                                                            <strong>Purchase Date:</strong> {{formatDateTime payments.[0].occurred_on_raw "January 2, 2006"}}
+                                                                                                        </p>
+                                                                                                    </th>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </th>
+                                                                                    <th class="small-12 large-6 columns last"
+                                                                                        style="margin: 0 auto; color: #333333; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; padding-bottom: 16px; padding-left: 8px; padding-right: 16px; text-align: left; width: 274px;">
+                                                                                        <table
+                                                                                            style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
+                                                                                            <tbody>
+                                                                                                <tr
+                                                                                                    style="padding: 0; text-align: left; vertical-align: top;">
+                                                                                                    <th
+                                                                                                        style="margin: 0; color: #333333; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
+                                                                                                        <p
+                                                                                                            style="margin: 0; margin-bottom: 10px; color: #333333; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
+                                                                                                            <strong>Your Details:</strong> 
+                                                                                                            <br />{{identity_name}} {{#if identity_meta.address}}
+                                                                                                            <br />{{identity_meta.address}}
+                                                                                                            <br />{{identity_meta.city}},
+                                                                                                            {{identity_meta.state}}
+                                                                                                            {{identity_meta.zip_code}} {{else}}
+                                                                                                            {{identity_email}} <br />{{identity_meta.phone}}
+                                                                                                            {{/if}}
+                                                                                                        </p>
+                                                                                                    </th>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </th>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
 
 {{!--Important Info Section--}}                                         {{#each event_templates}}
                                                                             {{#if event_template_meta.important_info_heading}}
@@ -1560,57 +1536,6 @@
                                                                             {{/if}}
                                                                         {{/each}}
                                                                         
-                                                                        <Br>
-{{!--Below: Order Summary - DO NOT CHANGE!--}}                          <hr style="border-color: #3f3831; border-style: solid; border-width: 1px 0 0; height: 0; margin: 0;" />
-                                                                        <h2 style="margin: 0; margin-bottom: 10px; color: #000000; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 24px; font-weight: bold; line-height: 32px; margin-top: 32px; padding: 0; text-align: left; word-wrap: normal;">
-                                                                            Order Summary
-                                                                        </h2>
-                                                                        <table class="row order-summary" style="border-collapse: collapse; border-spacing: 0; display: table; padding: 0; position: relative; text-align: left; vertical-align: top; width: 100%;">
-                                                                            <tbody>
-                                                                                <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                    <th class="small-12 large-6 columns first" style="margin: 0 auto; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; padding-bottom: 16px; padding-left: 16px; padding-right: 8px; text-align: left; width: 274px;">
-                                                                                        <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
-                                                                                            <tbody>
-                                                                                                <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                                    <th style="margin: 0; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
-                                                                                                        <p style="margin: 0; margin-bottom: 10px; color: #141414; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
-                                                                                                            <strong>Order Number:</strong> 
-                                                                                                            <br>{{ticket_order_number}}
-                                                                                                        </p>
-                                                                                                        <p style="margin: 0; margin-bottom: 10px; color: #141414; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
-                                                                                                            <strong>Purchase Date:</strong> 
-                                                                                                            <br>{{formatDateTime payments.[0].occurred_on_raw "Monday, 2 January, 2006"}}
-                                                                                                        </p>
-                                                                                                    </th>
-                                                                                                </tr>
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                    </th>
-                                                                                    <th class="small-12 large-6 columns last" style="margin: 0 auto; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; padding-bottom: 16px; padding-left: 8px; padding-right: 16px; text-align: left; width: 274px;">
-                                                                                        <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
-                                                                                            <tbody>
-                                                                                                <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                                    <th style="margin: 0; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
-                                                                                                        <p style="margin: 0; margin-bottom: 10px; color: #141414; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: left;">
-                                                                                                            <strong>Your Details:</strong> 
-                                                                                                            <br>{{identity_name}} 
-                                                                                                            {{#if identity_meta.address}} 
-                                                                                                                <br />{{identity_meta.address}} 
-                                                                                                                <br />{{identity_meta.city}}, {{identity_meta.state}} {{identity_meta.zip_code}} {{else}} {{identity_email}} 
-                                                                                                                <br />{{identity_meta.phone}} 
-                                                                                                            {{/if}}
-                                                                                                        </p>
-                                                                                                    </th>
-                                                                                                </tr>
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                    </th>
-                                                                                    <th>
-
-                                                                                    </th>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
                                                                         {{#each event_templates}}
                                                                             {{#if event_template_meta.survey_heading}}
                                                                                 <h3 style="margin: 0; margin-bottom: 10px; color: #000000; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 20px; font-weight: bold; padding: 0; text-align: left; word-wrap: normal;">
@@ -1637,214 +1562,6 @@
                                                                                 {{/each}} {{/each}}
                                                                             {{/if}}
 																		{{/each}}
-                                                                        {{#if event_templates.[0].event_template_meta.donation_ticket_summary}}
-                                                                        {{else}}
-                                                                            <table class="row breakdown-header tickets" style="border-collapse: collapse; border-spacing: 0; display: table; padding: 0; position: relative; text-align: left; vertical-align: top; width: 100%;">
-                                                                                <tbody>
-                                                                                    <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                        <th class="small-8 large-9 columns first" style="margin: 0 auto; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 24px; padding: 32px 8px 0 16px; text-align: left; width: 419px;">
-                                                                                            <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
-                                                                                                <tbody>
-                                                                                                    <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                                        <th style="margin: 0; color: #141414; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 24px; padding: 0; text-align: left;">
-                                                                                                            Tickets
-                                                                                                        </th>
-                                                                                                    </tr>
-                                                                                                </tbody>
-                                                                                            </table>
-                                                                                        </th>
-                                                                                        <th class="text-right small-4 large-3 columns last" style="margin: 0 auto; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 24px; padding: 32px 16px 0 8px; text-align: right; width: 129px;">
-                                                                                            <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
-                                                                                                <tbody>
-                                                                                                    <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                                        <th style="margin: 0; color: #141414; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 24px; padding: 0; text-align: right;">
-                                                                                                            Price
-                                                                                                        </th>
-                                                                                                    </tr>
-                                                                                                </tbody>
-                                                                                            </table>
-                                                                                        </th>
-                                                                                    </tr>
-                                                                                </tbody>
-                                                                            </table>
-                                                                        {{/if}}
-
-                                                                        {{#each event_templates}} {{#each event_sessions}}
-                                                                        <hr class="dashed with-margins" style="border-color: #C8C8C8; border-style: dashed; border-width: 1px 0 0; height: 0; margin: 0; margin-left: 16px; margin-right: 16px; margin-top: 16px;" />
-                                                                        <table class="row breakdown-section" style="border-collapse: collapse; border-spacing: 0; display: table; padding: 0; position: relative; text-align: left; vertical-align: top; width: 100%;">
-                                                                            <tbody>
-                                                                                <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                    <th class="small-12 large-12 columns first last" style="margin: 0 auto; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; padding-bottom: 8px; padding-left: 16px; padding-right: 16px; text-align: left; width: 564px;">
-                                                                                        <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
-                                                                                            <tbody>
-                                                                                                <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                                    <th style="margin: 0; color: #141414; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; padding-left: 16px; padding-top: 16px; text-align: left;">
-                                                                                                        <strong>
-                                                                                                            {{#if ../event_template_meta.custom_event_name}}
-                                                                                                                {{../event_template_meta.custom_event_name}}
-                                                                                                            {{else}}
-                                                                                                                {{../event_template_name}}
-                                                                                                            {{/if}} 
-                                                                                                        </strong>
-                                                                                                        {{#ifEqual ../event_template_category "Donation"}} 
-                                                                                                        {{else}}
-                                                                                                            - {{formatDateTime start_datetime_raw "Monday, January 2, 2006" }} 
-                                                                                                            {{#ifNotEqual "N/A" start_time}} 
-                                                                                                                {{#ifNotEqual "Admission" ../event_template_category}} at {{start_time}} 
-                                                                                                                {{/ifNotEqual}} 
-                                                                                                            {{/ifNotEqual}}
-                                                                                                        {{/ifEqual}}
-                                                                                                    </th>
-                                                                                                    <th class="expander" style="margin: 0; color: #141414; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0!important; padding-left: 16px; padding-top: 16px; text-align: left; visibility: hidden; width: 0;">&nbsp;</th>
-                                                                                                </tr>
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                    </th>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                        {{#each tickets_summary}}
-                                                                        <table class="row breakdown-line" style="border-collapse: collapse; border-spacing: 0; display: table; padding: 0; position: relative; text-align: left; vertical-align: top; width: 100%;">
-                                                                            <tbody>
-                                                                                <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                    <th class="small-9 large-9 columns first" style="margin: 0 auto; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; padding-bottom: 8px; padding-left: 16px; padding-right: 8px; text-align: left; width: 419px;">
-                                                                                        <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
-                                                                                            <tbody>
-                                                                                                <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                                    <th style="margin: 0; color: #141414; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 12px; font-weight: 400; line-height: 16px; padding: 0; padding-left: 32px; text-align: left;">
-                                                                                                        {{this.count}} x {{ticket_type_name}} 
-                                                                                                        <span class="inline-group"> 
-                                                                                                            @ {{#ifNotEqual single_price single_adjusted_price}}<s>${{single_price}}</s> 
-                                                                                                            {{/ifNotEqual}} 
-                                                                                                            ${{single_adjusted_price}}
-                                                                                                        </span>
-                                                                                                    </th>
-                                                                                                </tr>
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                    </th>
-                                                                                    <th class="text-right small-3 large-3 columns last" style="margin: 0 auto; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; padding-bottom: 8px; padding-left: 8px; padding-right: 16px; text-align: right; width: 129px;">
-                                                                                        <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
-                                                                                            <tbody>
-                                                                                                <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                                    <th style="margin: 0; color: #141414; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 12px; font-weight: 400; line-height: 16px; padding: 0; text-align: right;">
-                                                                                                        {{#ifNotEqual row_price row_adjusted_price}} 
-                                                                                                            <s>${{row_price}}</s> 
-                                                                                                        {{/ifNotEqual}} 
-                                                                                                        ${{row_adjusted_price}}
-                                                                                                    </th>
-                                                                                                </tr>
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                    </th>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                        {{/each}} 
-                                                                        {{/each}} {{/each}} 
-                                                                        
-{{!--Discount Info - DO NOT EDIT--}}                                    {{#if discounts}}
-                                                                        <hr class="with-margins black" style="border-color: #787878; border-style: solid; border-width: 1px 0 0; height: 0; margin: 0; margin-left: 16px; margin-right: 16px; margin-top: 16px;" />
-                                                                        <table class="row breakdown-header discounts" style="border-collapse: collapse; border-spacing: 0; display: table; padding: 0; position: relative; text-align: left; vertical-align: top; width: 100%;">
-                                                                            <tbody>
-                                                                                <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                    <th class="small-6 large-9 columns first" style="margin: 0 auto; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 24px; padding: 32px 8px 16px 16px; text-align: left; width: 419px;">
-                                                                                        <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
-                                                                                            <tbody>
-                                                                                                <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                                    <th style="margin: 0; color: #141414; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 24px; padding: 0; text-align: left;">
-                                                                                                        Discounts
-                                                                                                    </th>
-                                                                                                </tr>
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                    </th>
-                                                                                    <th class="text-right small-6 large-3 columns last" style="margin: 0 auto; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 24px; padding: 32px 16px 16px 8px; text-align: right; width: 129px;">
-                                                                                        <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
-                                                                                            <tbody>
-                                                                                                <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                                    <th style="margin: 0; color: #141414; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 24px; padding: 0; text-align: right;">
-                                                                                                        Amount
-                                                                                                    </th>
-                                                                                                </tr>
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                    </th>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                        {{#each discounts}}
-                                                                        <table class="row breakdown-discount" style="border-collapse: collapse; border-spacing: 0; display: table; padding: 0; position: relative; text-align: left; vertical-align: top; width: 100%;">
-                                                                            <tbody>
-                                                                                <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                    <th class="small-9 large-9 columns first" style="margin: 0 auto; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; padding-bottom: 8px; padding-left: 16px; padding-right: 8px; text-align: left; width: 419px;">
-                                                                                        <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
-                                                                                            <tbody>
-                                                                                                <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                                    <th style="margin: 0; color: #141414; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 12px; font-weight: 400; line-height: 16px; padding: 0; padding-left: 32px; text-align: left;">
-                                                                                                        {{name}}
-                                                                                                    </th>
-                                                                                                </tr>
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                    </th>
-                                                                                    <th class="text-right small-3 large-3 columns last" style="margin: 0 auto; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; padding-bottom: 8px; padding-left: 8px; padding-right: 16px; text-align: right; width: 129px;">
-                                                                                        <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
-                                                                                            <tbody>
-                                                                                                <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                                    <th style="margin: 0; color: #141414; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 12px; font-weight: 400; line-height: 16px; padding: 0; text-align: right;">
-                                                                                                        ${{discount}}
-                                                                                                    </th>
-                                                                                                </tr>
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                    </th>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                        {{/each}} 
-                                                                        {{/if}} 
-                                                                        
-                                                                        {{#if payments.[0].amount}}
-                                                                            <hr class="with-margins black" style="border-color: #787878; border-style: solid; border-width: 1px 0 0; height: 0; margin: 0; margin-left: 16px; margin-right: 16px; margin-top: 16px;" />
-                                                                            <table class="row breakdown-total" style="border-collapse: collapse; border-spacing: 0; display: table; padding: 0; position: relative; text-align: left; vertical-align: top; width: 100%;">
-                                                                                <tbody>
-                                                                                    <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                        <th class="small-3 large-6 columns first" style="margin: 0 auto; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 32px 8px 32px 16px; text-align: left; width: 274px;">
-                                                                                            <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
-                                                                                                <tbody>
-                                                                                                    <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                                        <th style="margin: 0; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 24px; padding: 0; text-align: left;">&nbsp;</th>
-                                                                                                    </tr>
-                                                                                                </tbody>
-                                                                                            </table>
-                                                                                        </th>
-                                                                                        <th class="small-6 large-3 columns" style="margin: 0 auto; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 32px 8px 32px 8px; text-align: left; width: 129px;">
-                                                                                            <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
-                                                                                                <tbody>
-                                                                                                    <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                                        <th style="margin: 0; color: #141414; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 24px; padding: 0; text-align: right;">
-                                                                                                            Total payment:
-                                                                                                        </th>
-                                                                                                    </tr>
-                                                                                                </tbody>
-                                                                                            </table>
-                                                                                        </th>
-                                                                                        <th class="text-right small-3 large-3 columns last" style="margin: 0 auto; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 32px 16px 32px 8px; text-align: right; width: 129px;">
-                                                                                            <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
-                                                                                                <tbody>
-                                                                                                    <tr style="padding: 0; text-align: left; vertical-align: top;">
-                                                                                                        <th style="margin: 0; color: #141414; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 24px; padding: 0; text-align: right;">
-                                                                                                            ${{total_payments}}
-                                                                                                        </th>
-                                                                                                    </tr>
-                                                                                                </tbody>
-                                                                                            </table>
-                                                                                        </th>
-                                                                                    </tr>
-                                                                                </tbody>
-                                                                            </table>
-                                                                        {{/if}} 
 
                                                                         {{#each event_templates}}
 {{!--Donation Thank You Section Header--}}                                  {{#if event_template_meta.dv_ty_header}}
