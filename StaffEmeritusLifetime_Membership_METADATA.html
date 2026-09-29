@@ -62,17 +62,17 @@
                                                                                 {{/ifEqual}}
                                                                             {{/if}}
                                                                         </center>
-                                                                            <h2 style="margin: 0; margin-bottom: 10px; color: #000000; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 20px; font-weight: bold; line-height: 24px; margin-top: 28px; padding: 0; text-align: left; word-wrap: normal;">
-                                                                                <center>
-                                                                                Here is your
-                                                                                {{#ifEqual event_templates.[0].event_sessions.[0].tickets.[0].ticket_group_name "Lifetime Membership"}}
-                                                                                    Lifetime
-                                                                                {{else}}
-                                                                                    {{event_templates.[0].event_sessions.[0].tickets.[0].ticket_group_name}}
-                                                                                {{/ifEqual}}
-                                                                                Membership card!
-                                                                                </center>
-                                                                            </h2>
+                                                                        <h2 style="margin: 0; margin-bottom: 10px; color: #000000; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 20px; font-weight: bold; line-height: 24px; margin-top: 28px; padding: 0; text-align: left; word-wrap: normal;">
+                                                                            <center>
+                                                                            Here is your
+                                                                            {{#ifEqual event_templates.[0].event_sessions.[0].tickets.[0].ticket_group_name "Lifetime Membership"}}
+                                                                                Lifetime
+                                                                            {{else}}
+                                                                                {{event_templates.[0].event_sessions.[0].tickets.[0].ticket_group_name}}
+                                                                            {{/ifEqual}}
+                                                                            Membership card!
+                                                                            </center>
+                                                                        </h2>
                                                                     {{#with event_templates.[0].event_sessions.[0]}}
                                                                     <table class="membership-card"
                                                                         style="margin: 0 auto; background: #fefefe; border-collapse: separate; border-spacing: 0; margin-top: 20px; padding: 0; text-align: inherit; vertical-align: top; width: 100%!important; max-width: 445px; border-radius: 15px 15px 15px 15px; border: 1px solid #cccccc;">
@@ -92,18 +92,18 @@
                                                                                                 align="center" />
                                                                                         </center>
                                                                                     </div>
-                                                                                    <h3
-                                                                                        style="margin: 0; margin-bottom: 10px; color: #000000; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 20px; font-weight: bold; line-height: 24px; padding: 0; text-align: center; word-wrap: normal;">
-                                                                                        Member</h3>
-                                                                                    {{#each tickets}} {{#ifEqual
-                                                                                    "Primary" ticket_type_name}} <strong
-                                                                                        style="display: block;">{{ticket_holder_name}}</strong>
-                                                                                    {{/ifEqual}} {{#ifEqual "Secondary"
-                                                                                    ticket_type_name}} {{#ifNotEqual
-                                                                                    ticket_holder_name identity_name}}
-                                                                                    <strong
-                                                                                        style="display: block;">{{ticket_holder_name}}</strong>
-                                                                                    {{/ifNotEqual}} {{/ifEqual}}
+                                                                                    <h3 style="margin: 0; margin-bottom: 10px; color: #000000; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 20px; font-weight: bold; line-height: 24px; padding: 0; text-align: center; word-wrap: normal;">
+                                                                                        Member
+                                                                                    </h3>
+                                                                                    {{#each tickets}} 
+                                                                                        {{#ifEqual "Primary" ticket_type_name}} 
+                                                                                            <b style="display: block;">{{ticket_holder_name}}</b>
+                                                                                        {{/ifEqual}} 
+                                                                                        {{#ifEqual "Secondary" ticket_type_name}} 
+                                                                                            {{#ifNotEqual ticket_holder_name identity_name}}
+                                                                                                <b style="display: block;">{{ticket_holder_name}}</b>
+                                                                                            {{/ifNotEqual}} 
+                                                                                        {{/ifEqual}}
                                                                                     {{/each}}
                                                                                     <div>
                                                                                         {{tickets.[0].ticket_group_name}}
