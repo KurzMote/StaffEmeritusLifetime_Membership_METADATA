@@ -84,12 +84,18 @@
                                                                                     <div class="logo-wrapper"
                                                                                         style="margin: 15px 0; min-width: 0!important; width: 100%;"
                                                                                         data-parsed="">
-                                                                                        <center><img
-                                                                                                class="logo float-center"
-                                                                                                style="-ms-interpolation-mode: bicubic; margin: 0 auto; clear: both; display: block; float: none; max-width: 80%; outline: 0; text-align: center; text-decoration: none; width: 90px;"
-                                                                                                src="https://i.ibb.co/9cmX4LT/Mote-Marine-Laboratory-Aquarium-Stacked-Logo-Full-Color-1.png"
-                                                                                                alt="Mote" width="90"
-                                                                                                align="center" />
+                                                                                        <center>
+                                                                                            {{#ifEqual portal.domain "ticketing.mote.org"}}
+        {{!--Production Site Round Logo--}}                                                     <img class="logo float-center" alt="Mote’s Round Logo" width="90" align="center"
+                                                                                                    style="-ms-interpolation-mode: bicubic; margin: 0 auto; clear: both; display: block; float: none; max-width: 80%; outline: 0; text-align: center; text-decoration: none; width: 90px;"
+                                                                                                    src="https://{{portal.domain}}/cached_api/assets/mote/85499296-65e4-13be-2bc7-02b12d673092" align="center">
+                                                                                            {{else}}
+                                                                                                {{#ifEqual portal.domain "mote.web.use2.ticketuretest.com"}}
+        {{!--DEV Site Round Logo--}}                                                                <img class="logo float-center" alt="Mote’s Round Logo Placeholder" width="90" align="center"
+                                                                                                        style="-ms-interpolation-mode: bicubic; margin: 0 auto; clear: both; display: block; float: none; max-width: 80%; outline: 0; text-align: center; text-decoration: none; width: 90px;"
+                                                                                                        src="https://{{portal.domain}}/cached_api/assets/mote/d33fdfc6-1cd8-c830-1aab-527c67ee8463" align="center">
+                                                                                                {{/ifEqual}}
+                                                                                            {{/ifEqual}}
                                                                                         </center>
                                                                                     </div>
                                                                                     <h3 style="margin: 0; margin-bottom: 10px; color: #000000; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 20px; font-weight: bold; line-height: 24px; padding: 0; text-align: center; word-wrap: normal;">
@@ -123,8 +129,8 @@
                                                                                                     style="padding: 0; text-align: center; vertical-align: top;">
                                                                                                     <th class="small-12 large-6 columns first"
                                                                                                         style="margin: 0 auto; color: #333333; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: center; width: 50%;">
-                                                                                                        <center><img
-                                                                                                                style="-ms-interpolation-mode: bicubic; clear: both; display: block; max-width: 100%; outline: 0; text-decoration: none; width: 104px;"
+                                                                                                        <center>
+                                                                                                            <img style="-ms-interpolation-mode: bicubic; clear: both; display: block; max-width: 100%; outline: 0; text-decoration: none; width: 104px;"
                                                                                                                 src="https://{{portal.domain}}/api/membership/{{membership.id }}/qrcode?size=256&amp;margin=2&amp;shrinkonly"
                                                                                                                 alt="QR code for {{scan_code}}"
                                                                                                                 width="104" />
@@ -152,11 +158,10 @@
                                                                                         </table>
                                                                                         <p class="fineprint"
                                                                                             style="margin: 0; margin-bottom: 10px; clear: left; color: #333333; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 12px; font-weight: 400; line-height: 16px; margin-top: 12px; padding: 0; text-align: center;">
-                                                                                            For more information about
-                                                                                            your membership, visit <a
-                                                                                                style="margin: 0; color: #0160a9; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-weight: 400; line-height: 16px; padding: 0; text-align: center; text-decoration: underline;"
-                                                                                                href="https://mote.org/support/membership">{{seller.name}}
-                                                                                                members</a>.
+                                                                                            For more information aboutyour membership, visit 
+                                                                                            <a style="margin: 0; color: #0160a9; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-weight: 400; line-height: 16px; padding: 0; text-align: center; text-decoration: underline;" href="https://mote.org/support/membership">
+                                                                                                {{seller.name}} members
+                                                                                            </a>.
                                                                                         </p>
                                                                                     </div>
                                                                                 </th>
@@ -235,7 +240,7 @@
                                                                                     {{event_templates.[0].event_template_meta.[event_contact_email]}}
                                                                                 </a>
                                                                             {{else}}
-                                                                                <a style="margin-top:0px; margin-bottom: 5px;" href="mailto:guestservices@mote.org?subject={{event_templates.[0].event_sessions.[0].tickets.[0].ticket_holder_name}}%20question:%20{{event_templates.[0].event_template_name}}&body=Hello%20{{event_templates.[0].event_template_meta.[event_contact_person]}},%0D%0A%0D%0A%20My%20order%20number%20is:%20{{ticket_order_number}}%0D%0A%0D%0A">guestservices@mote.org</a>
+                                                                                <a style="margin-top:0px; margin-bottom: 5px;" href="mailto:membership@mote.org?subject={{event_templates.[0].event_sessions.[0].tickets.[0].ticket_holder_name}}%20question:%20{{event_templates.[0].event_template_name}}&body=Hello%20{{event_templates.[0].event_template_meta.[event_contact_person]}},%0D%0A%0D%0A%20My%20order%20number%20is:%20{{ticket_order_number}}%0D%0A%0D%0A">membership@mote.org</a>
                                                                             {{/if}}
                                                                         </p>
                                                                         {{#each event_templates}}
@@ -2528,48 +2533,6 @@
                                                                                     <th class="footnote fineprint small-12 large-7 columns first" style="margin: 0 auto; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 12px; font-weight: 400; line-height: 16px; padding: 0; padding-bottom: 32px; padding-top: 32px; text-align: left; width: 322.33px;">
                                                                                         <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">
                                                                                             <tbody>
-                                                                                                <tr style="padding: 0; text-align: left; vertical-align: top;">
-{{!--Info & Hours Links--}}                                                                         <th>
-                                                                            {{#each event_templates}}
-                                                                                {{#if event_template_meta.no_physical_location}}
-                                                                                {{else}}
-                                                                                    {{#if event_template_meta.remove_footer_location_info}}       
-                                                                                    {{else}}
-                                                                                        <p style="margin: 0; color: #3f3831; font-family: Forza,'Forza A','Forza B',Helvetica,sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; padding: 0; text-align: center;">
-                                                                                            <strong>
-                                                                                                {{#if event_template_meta.custom_event_name}}
-                                                                                                    {{event_template_meta.custom_event_name}}:
-                                                                                                {{else}}
-                                                                                                    {{event_template_name}}:
-                                                                                                {{/if}}</strong>
-                                                                                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
-                            {{!--Mote SEA Location--}}                                  {{#ifEqual venue_name "Mote Science Education Aquarium (Mote SEA)"}}
-                                                                                                <a href="https://mote.org/aquarium/hours-location" target="_blank">Mote Science Education Aquarium</a> Directions & Information
-                                                                                        {{else}}
-                            {{!--City Island Location--}}                                   {{#ifEqual venue_name "Mote Marine Laboratory on City Island"}}
-                                                                                                    <a href="https://mote.org/location/sarasota-main-campus/" target="_blank">Mote Marine Laboratory on City Island</a> Directions & Information
-                                                                                            {{else}}
-                            {{!--MAP / Mote Aquaculture Research Park Location--}}              {{#ifEqual venue_name "Mote Aquaculture Research Park"}}
-                                                                                                        <a href="https://mote.org/location/sarasota-aquaculture-park/" target="_blank">Mote's Aquaculture Research Park</a> Directions & Information
-                                                                                                {{else}}
-                            {{!--UPPER KEYS/Key Largo Location--}}                                  {{#ifEqual venue_name "Key Largo Coral Nursery"}}
-                                                                                                            <a href="https://mote.org/location/key-largo-coral-nursery/" target="_blank">Mote's Key Largo Coral Nursery</a> Directions & Information
-                                                                                                    {{else}}
-                            {{!--LOWER KEYS/Summerland Key EMIC2R3 Location--}}                         {{#ifEqual venue_name "Elizabeth Moore Int'l Center Coral Reef Research & Restoration"}}
-                                                                                                                <a href="https://mote.org/location/summerland-key-lab/" target="_blank">Mote's Summerland Key Campus</a> Directions & Information
-                                                                                                        {{else}}
-                                                                                                        {{/ifEqual}} 
-                                                                                                    {{/ifEqual}}
-                                                                                                {{/ifEqual}}
-                                                                                            {{/ifEqual}}
-                                                                                        {{/ifEqual}}
-                                                                                        </p>
-                                                                                    {{/if}}
-                                                                                {{/if}}
-                                                                                <Br>
-                                                                            {{/each}}
-                                                                                                    </th>
-                                                                                                </tr>
                                                                                                 <tr style="padding:0;text-align:left;vertical-align:top">
                                                                                                     <th style="Margin:0;color:#141414;font-family:Forza,'Forza A','Forza B',Helvetica,sans-serif;font-size:12px;font-weight:400;line-height:16px;margin:0;padding:0;padding-bottom:10px;text-align:left">
 {{!--Receipt Data Statement--}}                                                         					<p>Information provided here will be retained in our database, but will not be sold or shared with any other organization or business. When receiving promotional emails from Mote Marine Laboratory you may unsubscribe at any time.
